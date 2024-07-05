@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Net.Http.Headers;
-using System.Reflection.Emit;
-using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using static Login.Draw;
-using static Login.Program;
 
 namespace Login
 {
     internal class Program
     {
+        /**
+         * Class for storing the information needed to create a menu option
+         */
         public class Option
         {
             public string Name { get; }
@@ -28,7 +21,10 @@ namespace Login
             }
         }
 
-
+        /**
+         * Class for storing user data like user name and password, 
+         * these can be then used for login authentication
+         */
         public class UserInfo
         {
             public string Name { get; set; }
@@ -38,7 +34,6 @@ namespace Login
 
         /** 
          * Hashes the raw text of the password entered into a hashed copy
-         * 
          */
         private static string HashPassword(string password)
         {
@@ -74,7 +69,7 @@ namespace Login
          * by checking the password against the one stored inside infoStore 
          * matching the user name entered. 
          * 
-         * Return: an Enum type which indicates the verification status 
+         * @return: an Enum type which indicates the verification status 
          * 
          */
 
@@ -113,7 +108,7 @@ namespace Login
         * Asks the user for info which can be used
         * for authentication later during user login
         * 
-        * Return: boolean value to indicate if a fault has occured
+        * @return: boolean value to indicate if a fault has occured
         */
         static bool LogUserInfo(List<UserInfo> infoStore)
         {
@@ -140,13 +135,6 @@ namespace Login
             infoStore.Add(newUser);
             return true;
         }
-        // Default action of all the options. You can create more methods
-        static void WriteTemporaryMessage(string message)
-        {
-            Console.Clear();
-            Console.WriteLine(message);
-            Thread.Sleep(3000);
-        }
 
         public static List<Option> options = new List<Option>
             {
@@ -154,20 +142,26 @@ namespace Login
                 new Option("Login", () => EnterLoginProcedure()),
                 new Option("Exit", () => Environment.Exit(0)),
             };
+
         public static List<UserInfo> infoStore = new List<UserInfo>();
 
         static void Main(string[] args)
         {
+            // Initialise variables for use
             int indexSelected = 0;
             bool running = true;
             ConsoleKeyInfo keyInfo;
             while (running)
             {
+                // For each loop, clear the terminal output and draw a new version of the menu
+                Console.Clear();
                 DrawMenu(options, indexSelected);
 
+                // Read keyboard info to determine action
                 keyInfo = Console.ReadKey(true);
                 switch (keyInfo.Key)
                 {
+                    // Update the menu option selected based on the index
                     case ConsoleKey.UpArrow:
                         if (indexSelected - 1 != -1)
                         {
@@ -181,19 +175,27 @@ namespace Login
                             indexSelected++;
                         }
                         break;
+                    // Quit using Q
                     case ConsoleKey.Q:
                         running = false;
                         break;
+                    // Triggers a secondary procedure based on the option selected
                     case ConsoleKey.Enter:
                         options[indexSelected].Action.Invoke();
                         break;
                 }
             }
         }
-
+        /**
+         * This function draws the menu on the terminal 
+         * @params options: 
+         *     Supplies the info needed to create each menu item
+         
+         * @params indexSelected:
+         *     Adds a ">" indicator to option[indexSelected]
+         */
         private static void DrawMenu(List<Option> options, int indexSelected)
         {
-            Console.Clear();
             for (int i = 0; i < options.Count; i++)
             {
                 var option = options[i];
@@ -210,9 +212,9 @@ namespace Login
 
         private static void EnterLoginProcedure()
         {
-            string welcomeMessage = " Hello registered user! please sign in with your user name and password:";
-
             Console.Clear();
+            string welcomeMessage = " Hello registered user! please sign in with your user name and password:";
+            Console.WriteLine(welcomeMessage);
             Console.WriteLine("Enter name:");
             string nameEntered = Console.ReadLine();
             Console.WriteLine("Enter password:");
@@ -234,6 +236,7 @@ namespace Login
                 Console.WriteLine($"Hi, {nameEntered}");
             }
 
+            // Wait a little bit for the user to see the message before going back
             Thread.Sleep(3000);
         }
 

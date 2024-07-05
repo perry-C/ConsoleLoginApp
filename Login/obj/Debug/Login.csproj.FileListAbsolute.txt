@@ -5,3 +5,10 @@ C:\Users\zed\code\LoginApp\Login\obj\Debug\Login.csproj.AssemblyReference.cache
 C:\Users\zed\code\LoginApp\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
 C:\Users\zed\code\LoginApp\Login\obj\Debug\Login.exe
 C:\Users\zed\code\LoginApp\Login\obj\Debug\Login.pdb
+C:\Users\zed\code\rs_train\LoginApp\Login\bin\Debug\Login.exe.config
+C:\Users\zed\code\rs_train\LoginApp\Login\bin\Debug\Login.exe
+C:\Users\zed\code\rs_train\LoginApp\Login\bin\Debug\Login.pdb
+C:\Users\zed\code\rs_train\LoginApp\Login\obj\Debug\Login.csproj.AssemblyReference.cache
+C:\Users\zed\code\rs_train\LoginApp\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
+C:\Users\zed\code\rs_train\LoginApp\Login\obj\Debug\Login.exe
+C:\Users\zed\code\rs_train\LoginApp\Login\obj\Debug\Login.pdb
