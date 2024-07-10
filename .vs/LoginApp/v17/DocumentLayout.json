@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\zed\\code\\rs_train\\LoginApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B44B0648-9ECA-4A05-BB65-6C541D5960E4}|Login\\Login.csproj|C:\\Users\\zed\\code\\rs_train\\LoginApp\\login\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B44B0648-9ECA-4A05-BB65-6C541D5960E4}|Login\\Login.csproj|c:\\users\\zed\\code\\rs_train\\loginapp\\login\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B44B0648-9ECA-4A05-BB65-6C541D5960E4}|Login\\Login.csproj|solutionrelative:login\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,7 +24,7 @@
               "RelativeDocumentMoniker": "Login\\Program.cs",
               "ToolTip": "C:\\Users\\zed\\code\\rs_train\\LoginApp\\Login\\Program.cs",
               "RelativeToolTip": "Login\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwDYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-03T00:01:43.148Z",
               "EditorCaption": ""
